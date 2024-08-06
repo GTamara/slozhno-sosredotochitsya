@@ -9,4 +9,10 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+	--base-color: #FFF1F7;
+	--text-color: #353430;
+	--accent-color: #353430;
+	--accent-bg-color: #FF8DCB;
+	--main-color: #FFC2E6;
 }
+/* background: #FF8DCB; */
