@@ -126,6 +126,12 @@ function html() {
         .pipe(browserSync.reload({stream: true}));
 }
 
+function scripts() {
+	return gulp.src('./scripts/*.js')
+				  .pipe(gulp.dest('dist/'))
+		  .pipe(browserSync.reload({stream: true}));
+  }
+
 function css() {
   return gulp.src('./styles/*.css')
         .pipe(plumber())
@@ -135,10 +141,16 @@ function css() {
 }
 
 function images() {
-  return gulp.src('./images/**/*.{jpg,png,svg,gif,ico,webp,avif}')
+  return gulp.src('./images/*.{jpg,png,svg,gif,ico,webp,avif}', {encoding: false})
     .pipe(gulp.dest('dist/images'))
     .pipe(browserSync.reload({stream: true}));
 }
+
+function fonts() {
+	return gulp.src('./fonts/*.*', {encoding: false})
+	  .pipe(gulp.dest('dist/fonts'))
+	  .pipe(browserSync.reload({stream: true}));
+  }
 
 function clean() {
   return del('dist');
@@ -150,13 +162,15 @@ function watchFiles() {
   gulp.watch(['./images/**/*.{jpg,png,svg,gif,ico,webp,avif}'], images);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, images));
+const build = gulp.series(clean, gulp.parallel(html, scripts, css, images, fonts));
 const watchapp = gulp.parallel(build, watchFiles, serve);
 
 exports.html = html;
+exports.scripts = scripts;
 exports.css = css;
 exports.images = images;
 exports.clean = clean;
+exports.fonts = fonts
 
 exports.build = build;
 exports.watchapp = watchapp;

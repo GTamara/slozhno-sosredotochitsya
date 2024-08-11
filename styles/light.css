@@ -4,15 +4,36 @@
   переключая тему
 */
 
-.page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
-	--base-color: #FFF1F7;
+
+@media (prefers-color-scheme: light) or (prefers-color-scheme: no-preference) {
+
+	:root {
+		--base-background-color: #FFF1F7;
+		--heading-color: #353430;
+		--text-color: #353430;
+		--accent-color: #353430;
+		--accent-bg-color: #FF8DCB;
+		--main-color: #FFC2E6;
+
+		--cover-image: url(./images/cover-image-light.png)
+	}
+
+} 
+
+.theme_light .page {
+
+	--base-background-color: #FFF1F7;
+	--heading-color: #353430;
 	--text-color: #353430;
 	--accent-color: #353430;
 	--accent-bg-color: #FF8DCB;
 	--main-color: #FFC2E6;
+
+	--cover-image: url(./images/cover-image-light.png);
+  /* сохраните этот селектор в приведённом виде.
+    Так стили написанные ниже будут иметь больший вес,
+    чем стили в медиазапросе предпочтений пользователя
+  */
+
 }
 /* background: #FF8DCB; */
