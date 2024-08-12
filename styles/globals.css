@@ -1,5 +1,3 @@
-/* Глобальные стили для проекта, их можно дополнять и менять по желанию */
-
 *,
 *::before,
 *::after {
@@ -13,11 +11,9 @@ html {
 }
 
 body {
+  margin: 0 auto;
   min-inline-size: 375px;
   max-inline-size: 1024px;
-  margin: 0 auto;
-  /* height: 100%; */
-  /* overflow: hidden; */
 }
 
 h1,
