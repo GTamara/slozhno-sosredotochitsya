@@ -14,6 +14,8 @@
 		--accent-color: #353430;
 		--accent-bg-color: #FF8DCB;
 		--main-color: #FFC2E6;
+		--active-outline-color: #FF007066;
+		--outline-color: #32312D66;
 
 		--cover-image: url(./images/cover-image-light.png)
 	}
@@ -28,6 +30,8 @@
 	--accent-color: #353430;
 	--accent-bg-color: #FF8DCB;
 	--main-color: #FFC2E6;
+	--active-outline-color: #FF007066;
+	--outline-color: #32312D66;
 
 	--cover-image: url(./images/cover-image-light.png);
   /* сохраните этот селектор в приведённом виде.
@@ -36,4 +40,4 @@
   */
 
 }
-/* background: #FF8DCB; */
+

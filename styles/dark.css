@@ -13,6 +13,8 @@
 		--accent-color: #FF0070;
 		--accent-bg-color: #FF0070;
 		--main-color: #DB00FF; 
+		--active-outline-color: #FF007066;
+		--outline-color: #FF007066;
 
 		--cover-image: url(./images/cover-image-dark.png)
 	}
@@ -31,7 +33,9 @@
 	--text-color: #F1B2CE;
 	--accent-color: #FF0070;
 	--accent-bg-color: #FF0070;
-	--main-color: #DB00FF; 
+	--main-color: #DB00FF;
+	--active-outline-color: #FF007066;
+	--outline-color: #FF007066;
 
 	--cover-image: url(./images/cover-image-dark.png)
 }
