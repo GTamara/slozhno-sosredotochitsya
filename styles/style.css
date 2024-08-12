@@ -15,7 +15,7 @@
 	display: flex;
 	flex-direction: column;
 	padding: var(--page-offset);
-	gap: 60px;
+	gap: 80px;
 	overflow: auto;
 	color: var(--text-color);
 }
@@ -220,7 +220,7 @@
 	grid-auto-flow: column;
 }
 
-.three-columns-grid__one-column-width {
+.three-columns-grid-one-column-width {
 	width: calc(var(--three-columns-grid-one-column-width));
 }
 
@@ -230,10 +230,27 @@
 
 @media (width < 768px) {
 
-	.three-columns-grid__one-column-width {
+	.three-columns-grid-one-column-width {
 		width: 100%;
 	}
 } 
+
+/* ------------ GALLERY -------------- */
+
+.gallery {
+
+}
+
+.gallery__subheading {
+	margin-block-end: 20px;
+}
+
+@media (width < 400px) {
+
+	.section__subheading {
+		margin-block-end: 10px;
+	}
+}
 
 .images {
 	position: relative;
@@ -245,9 +262,18 @@
 	"tape street street";
 	gap: var(--gap);
 	grid-template-columns: repeat(3, calc(var(--three-columns-grid-one-column-width)));
-	grid-template-rows: 25.79% 31.25% 42.46%;
+	/* grid-template-rows: 25.79% 31.25% 42.46%; */
 	grid-auto-flow: row;
 }
+
+/* @media (width < 769px) {
+
+	.images {
+		grid-template-columns: 33.28% 33.43% 33.28%;
+		grid-template-rows: 25.94% 31.08% 42.97%;
+	}
+
+} */
 
 .images__item {
 	display: block;
@@ -337,9 +363,18 @@
 	color: var(--accent-color);
 }
 
-@media (width < 800px) {
+@media (width < 768px) {
 
 	.section .section__content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap);
+	}
+} 
+
+@media (width <= 768px) {
+
+	.section .section__content.three-columns-grid {
 		display: flex;
 		flex-direction: column;
 		gap: var(--gap);
@@ -357,7 +392,7 @@
 	margin-block-end: 20px;
 }
 
-@media (width < 400px) {
+@media (width < 800px) {
 
 	.section__subheading {
 		margin-block-end: 10px;
