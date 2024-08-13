@@ -14,7 +14,7 @@
 	}
 } 
 
-.theme_dark .page {
+.decorated-zone.theme_dark {
 	--base-background-color: #000028;
 	--heading-color: #000028;
 	--text-color: #F1B2CE;

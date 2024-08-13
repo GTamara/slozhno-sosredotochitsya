@@ -5,6 +5,7 @@
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
+	transition: var(--transition-value);
 }
 
 .page {
@@ -15,7 +16,7 @@
 	padding: var(--page-offset);
 	overflow: auto;
 	color: var(--text-color);
-	font-family: 'IBM Plex mono', sans-serif;
+	font-family: 'IBM Plex mono', serif;
 }
 
 @media (width <= 400px) {
@@ -35,15 +36,8 @@
 }
 
 .header__main-heading {
-	margin-inline-start: -14px;
+	margin-inline-start: -20px;
 }
-
-@media (max-width: 400px) {
-
-	.header__main-heading {
-		margin-inline-start: 0;
-	}
-} 
 
 .header__theme-menu {
 	display: flex;
@@ -53,15 +47,6 @@
 	color: var(--accent-color);
 }
 
-@media (max-width: 768px) {
-
-	.header__theme-menu {
-		flex-direction: column-reverse;
-		align-items: end;
-	}
-} 
-
-
 .header__theme-menu-list {
 	display: flex;
 	justify-content: center;
@@ -69,30 +54,14 @@
 	inline-size: 100%;
 	block-size: 100%;
 }
-	
-@media (max-width: 768px) {
-	
-	.header__theme-menu-list {
-		flex-direction: column;
-		align-items: flex-end;
-	}
-} 
 
 .main-heading-title {
 	color: var(--main-color);
 	font-weight: 700;
 	font-size: clamp(6.6875rem, -4.375rem + 23.0469vw, 10.375rem);
 	line-height: clamp(5.5rem, -3.5rem + 18.75vw, 8.5rem);
-	text-shadow: 2px 2px 0 var(--accent-shadow-color);
+	text-shadow: 4px 4px 0 var(--accent-shadow-color);
 }
-
-@media (width < 768px) {
-
-	.main-heading-title {
-		font-size: clamp(6.4375rem, 5.6026rem + 3.5623vw, 7.3125rem);
-		line-height: clamp(5.3125rem, 4.4776rem + 3.5623vw, 6.1875rem);
-	}
-} 
 
 .header__phrase-container {
 	display: flex;
@@ -103,13 +72,6 @@
 .header__phrase-content {
 	inline-size: 50%;
 }
-
-@media (width <= 400px) {
-
-	.header__phrase-content {
-		inline-size: 100%;
-	}
-} 
 
 .accent-bg {
 	background-color: var(--accent-bg-color);
@@ -160,13 +122,6 @@
 	align-self: flex-start;
 }
 
-@media (max-width: 768px) {
-
-	.header__record-light-container {
-		align-self: auto;
-	}
-} 
-
 .header__record-light {
 	display: inline-block;
 	margin-inline: 10px;
@@ -188,10 +143,43 @@
 	visibility: hidden;
 }
 
-.content {
-	flex-grow: 1;
-	border: 1px solid red;
-}
+
+@media (max-width: 768px) {
+
+	.header__theme-menu {
+		flex-direction: column-reverse;
+		align-items: end;
+	}
+
+	.header__theme-menu-list {
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	.header__record-light-container {
+		align-self: auto;
+	}
+
+} 
+
+@media (width < 768px) {
+
+	.main-heading-title {
+		font-size: clamp(6.4375rem, 5.6026rem + 3.5623vw, 7.3125rem);
+		line-height: clamp(5.3125rem, 4.4776rem + 3.5623vw, 6.1875rem);
+	}
+} 
+
+@media (width <= 400px) {
+
+	.header__phrase-content {
+		inline-size: 100%;
+	}
+
+	.header__main-heading {
+		margin-inline-start: 0;
+	}
+} 
 
 /* ------------ MAIN -------------- */
 
@@ -200,13 +188,6 @@
 	flex-direction: column;
 	gap: 80px;
 }
-
-@media (width < 768px) {
-
-	.main-content {
-		gap: 50px;
-	}
-} 
 
 .two-columns-grid {
 	display: grid;
@@ -238,6 +219,10 @@
 
 @media (width < 768px) {
 
+	.main-content {
+		gap: 50px;
+	}
+
 	.three-columns-grid-one-column-width {
 		width: 100%;
 	}
@@ -249,22 +234,10 @@
 	margin-block-end: 20px;
 }
 
-@media (width < 400px) {
-
-	.section__subheading {
-		margin-block-end: 10px;
-	}
-
-	.gallery__subheading {
-		margin-block-end: 10px;
-	}
-}
-
 .images {
 	position: relative;
 	display: grid;
 	grid-template-columns: repeat(3, calc(var(--three-columns-grid-one-column-width)));
-	/* grid-template-rows: 25.79% 31.25% 42.46%; */
 	grid-auto-flow: row;
 	grid-template-areas:   
 		"sunset sunset ice-cream"
@@ -300,6 +273,17 @@
 
 .images__street {
 	grid-area: street;
+}
+
+@media (width < 400px) {
+
+	.section__subheading {
+		margin-block-end: 10px;
+	}
+
+	.gallery__subheading {
+		margin-block-end: 10px;
+	}
 }
 
 /* ------------ FOOTER -------------- */
@@ -373,15 +357,6 @@
 	font-size: inherit;
 }
 
-@media (width < 768px) {
-
-	.section .section__content {
-		display: flex;
-		flex-direction: column;
-		gap: var(--gap);
-	}
-} 
-
 @media (width <= 768px) {
 
 	.section .section__content.three-columns-grid {
@@ -389,9 +364,19 @@
 		flex-direction: column;
 		gap: var(--gap);
 	}
+
+	.section__subheading {
+		margin-block-end: 10px;
+	}
 } 
 
 @media (width < 400px) {
+
+	.section .section__content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap);
+	}
 
 	.section .images.section__content {
 		gap: 10px;
@@ -401,10 +386,3 @@
 .section__subheading {
 	margin-block-end: 10px;
 }
-
-@media (width < 800px) {
-
-	.section__subheading {
-		margin-block-end: 10px;
-	}
-} 

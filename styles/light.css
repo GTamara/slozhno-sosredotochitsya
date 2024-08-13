@@ -15,7 +15,7 @@
 
 } 
 
-.theme_light .page {
+.decorated-zone.theme_light {
 
 	--base-background-color: #FFF1F7;
 	--heading-color: #353430;

@@ -23,7 +23,7 @@ themeButtons.forEach((button) => {
 });
 
 function changeTheme(theme) {
-  document.body.className = '';
+  document.body.className = 'decorated-zone';
   document.body.classList.add(`theme_${theme}`);
   localStorage.setItem('theme', theme);
 }
