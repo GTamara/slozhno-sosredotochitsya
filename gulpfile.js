@@ -14,11 +14,10 @@
 // 		.pipe(plumber())
 // 		.pipe(gulp.dest('dist/'))
 // 	   .pipe(browserSync.reload({stream: true}))
-	   
+
 // }
 
 // exports.html = html
-
 
 // function css() {
 // 	const plugins = [
@@ -36,7 +35,6 @@
 // 		.pipe(browserSync.reload({stream: true}));
 // }
 
-
 // exports.css = css;
 
 // function images() {
@@ -47,19 +45,16 @@
 
 // exports.images = images;
 
-
 // function clean() {
 // 	return del('dist');
 // }
 
 // exports.clean = clean;
 
-
 // // const build = gulp.series(clean, gulp.parallel(html, css, images));
 // const build = gulp.series(clean, gulp.parallel(html, css, images));
 
 // exports.build = build;
-
 
 // function watchFiles() {
 // 	gulp.watch(['**/*.html'], html);
@@ -69,7 +64,6 @@
 // const watchapp = gulp.parallel(build, watchFiles, serve);
 
 // exports.watchapp = watchapp;
-
 
 // function serve() {
 // 	browserSync.init({
@@ -103,66 +97,72 @@
 
 // exports.default = watchapp;
 
-
-
-  const gulp = require('gulp');
+const gulp = require('gulp');
 const concat = require('gulp-concat-css');
 const plumber = require('gulp-plumber');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 
 function serve() {
-  browserSync.init({
-    server: {
-      baseDir: './dist'
-    }
-  });
+    browserSync.init({
+        server: {
+            baseDir: './dist',
+        },
+    });
 }
 
 function html() {
-  return gulp.src('./*.html')
+    return gulp
+        .src('./*.html')
         .pipe(plumber())
-				.pipe(gulp.dest('dist/'))
-        .pipe(browserSync.reload({stream: true}));
+        .pipe(gulp.dest('dist/'))
+        .pipe(browserSync.reload({ stream: true }));
 }
 
 function scripts() {
-	return gulp.src('./scripts/*.js')
-				  .pipe(gulp.dest('dist/'))
-		  .pipe(browserSync.reload({stream: true}));
-  }
+    return gulp
+        .src('./scripts/*.js')
+        .pipe(gulp.dest('dist/'))
+        .pipe(browserSync.reload({ stream: true }));
+}
 
 function css() {
-  return gulp.src('./styles/*.css')
+    return gulp
+        .src('./styles/*.css')
         .pipe(plumber())
         .pipe(concat('bundle.css'))
-				.pipe(gulp.dest('dist/'))
-        .pipe(browserSync.reload({stream: true}));
+        .pipe(gulp.dest('dist/'))
+        .pipe(browserSync.reload({ stream: true }));
 }
 
 function images() {
-  return gulp.src('./images/*.{jpg,png,svg,gif,ico,webp,avif}', {encoding: false})
-    .pipe(gulp.dest('dist/images'))
-    .pipe(browserSync.reload({stream: true}));
+    return gulp
+        .src('./images/*.{jpg,png,svg,gif,ico,webp,avif}', { encoding: false })
+        .pipe(gulp.dest('dist/images'))
+        .pipe(browserSync.reload({ stream: true }));
 }
 
 function fonts() {
-	return gulp.src('./fonts/*.*', {encoding: false})
-	  .pipe(gulp.dest('dist/fonts'))
-	  .pipe(browserSync.reload({stream: true}));
-  }
+    return gulp
+        .src('./fonts/*.*', { encoding: false })
+        .pipe(gulp.dest('dist/fonts'))
+        .pipe(browserSync.reload({ stream: true }));
+}
 
 function clean() {
-  return del('dist');
+    return del('dist');
 }
 
 function watchFiles() {
-  gulp.watch(['./*.html'], html);
-  gulp.watch(['./styles/**/*.css'], css);
-  gulp.watch(['./images/**/*.{jpg,png,svg,gif,ico,webp,avif}'], images);
+    gulp.watch(['./*.html'], html);
+    gulp.watch(['./styles/**/*.css'], css);
+    gulp.watch(['./images/**/*.{jpg,png,svg,gif,ico,webp,avif}'], images);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, scripts, css, images, fonts));
+const build = gulp.series(
+    clean,
+    gulp.parallel(html, scripts, css, images, fonts)
+);
 const watchapp = gulp.parallel(build, watchFiles, serve);
 
 exports.html = html;
@@ -170,7 +170,7 @@ exports.scripts = scripts;
 exports.css = css;
 exports.images = images;
 exports.clean = clean;
-exports.fonts = fonts
+exports.fonts = fonts;
 
 exports.build = build;
 exports.watchapp = watchapp;

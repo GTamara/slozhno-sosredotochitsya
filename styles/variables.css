@@ -1,16 +1,15 @@
 :root {
-	--accent-shadow-color: #FF0070;
-	--page-offset: 20px;
-	--gap: 20px;
-	--three-columns-grid-one-column-width: (100% - var(--gap) * 2) / 3;
-	--transition-value: 0.5s ease;
+    --accent-shadow-color: #ff0070;
+    --page-offset: 20px;
+    --gap: 20px;
+    --three-columns-grid-one-column-width: (100% - var(--gap) * 2) / 3;
+    --transition-value: 0.6s ease;
 }
 
 @media (width <= 400px) {
 
-	:root {
-		--page-offset: 10px;
-		--gap: 20px;
-	}
-
+    :root {
+        --page-offset: 10px;
+        --gap: 20px;
+    }
 }
