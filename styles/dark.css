@@ -26,3 +26,7 @@
 
     --cover-image: url(./images/cover-image-dark.png);
 }
+
+.theme_dark .page .header__record-light-container {
+    visibility: visible;
+}
