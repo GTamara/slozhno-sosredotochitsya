@@ -41,11 +41,38 @@
 }
 
 .header__theme-menu {
+	
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     padding-bottom: 28px;
     color: var(--accent-color);
+}
+
+.header__record-light-container:after {
+	content: '';
+    display: flex;
+    margin-inline: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 2px currentColor;
+    font-size: 0;
+    background-color: currentColor;
+    inline-size: 9px;
+    block-size: 9px;
+}
+
+.header__record-text {
+    line-height: 25px;
+    text-transform: uppercase;
+}
+
+.header__record-light-container {
+	position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-self: flex-start;
+	visibility: hidden;
 }
 
 .header__theme-menu-list {
@@ -112,32 +139,7 @@
 }
 
 .header__nav-section {
-    inline-size: 33.3%;
-}
-
-.header__record-light-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    align-self: flex-start;
-	visibility: hidden;
-}
-
-.header__record-light {
-    display: inline-block;
-    margin-inline: 10px;
-    border-radius: 50%;
-    box-shadow: 0 0 4px 2px currentColor;
-    font-size: 0;
-    background-color: currentColor;
-    inline-size: 9px;
-    block-size: 9px;
-}
-
-.header__record-text {
-    color: currentColor;
-    line-height: 25px;
-    text-transform: uppercase;
+    inline-size: 33.33%;
 }
 
 @media (max-width: 768px) {
@@ -188,10 +190,10 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-auto-flow: column;
-    gap: var(--gap);
+    gap: 12px;
 }
 
-.two-columns-grid__end-column {
+.flex-column {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
@@ -210,6 +212,13 @@
 
 .section__heading {
     margin-bottom: var(--gap);
+}
+
+@media (width < 800px) {
+
+    .two-columns-grid {
+        gap: var(--gap);
+    }
 }
 
 @media (width < 768px) {
@@ -336,23 +345,18 @@
     outline: 1px solid currentColor;
 }
 
-.secondary-heading,
-.article-title {
-    color: var(--heading-color);
+.secondary-heading {
+	color: var(--heading-color);
     font-weight: 700;
     font-size: inherit;
 }
 
-.article-subtitle {
-    color: var(--heading-color);
-    font-weight: 400;
-    font-size: inherit;
+.accent-color {
+	color: var(--accent-color);
 }
 
-.secondary-accent-heading {
-    color: var(--accent-color);
-    font-weight: 700;
-    font-size: inherit;
+.font-weight-thin {
+	font-weight: 400;
 }
 
 @media (width <= 768px) {
@@ -388,10 +392,6 @@
 
 .section__subheading {
     margin-block-end: 10px;
-}
-
-.section__gap {
-	gap: var(--gap);
 }
 
 .paragraph:not(:last-child) {

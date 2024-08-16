@@ -12,6 +12,10 @@
 
         --cover-image: url(./images/cover-image-dark.png);
     }
+
+	.page .header__record-light-container {
+		visibility: visible;
+	}
 }
 
 .decorated-zone.theme_dark {
