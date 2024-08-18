@@ -88,9 +88,7 @@
 .main-heading-title {
     color: var(--main-color);
     font-weight: 700;
-    /* font-size: clamp(6.6875rem, -4.375rem + 23.0469vw, 10.375rem); */
 	font-size: calc(clamp(6.667rem, 13.653vw + 0.955rem, 8.722rem));
-    /* line-height: clamp(5.5rem, -3.5rem + 18.75vw, 8.5rem); */
 	line-height: calc(clamp(5.5rem, 11.07vw + 0.869rem, 7.167rem));
 }
 
@@ -159,13 +157,13 @@
 		font-size: calc(clamp(6.444rem, 1.018vw + 6.232rem, 6.667rem));
 		line-height: calc(clamp(5.278rem, 1.018vw + 5.066rem, 5.5rem));
     }
-}
-
-@media (width <= 400px) {
 
     .header__phrase-content {
         inline-size: 100%;
     }
+}
+
+@media (width <= 400px) {
 
     .header__main-heading {
         margin-inline-start: 0;
