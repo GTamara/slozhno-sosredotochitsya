@@ -358,8 +358,8 @@
 	font-weight: 400;
 }
 
-.paragraph:not(:last-child) {
-	margin-block-end: 20px;
+.paragraph + .paragraph {
+	margin-block-start: 20px;
 }
 
 .accent-bg {
