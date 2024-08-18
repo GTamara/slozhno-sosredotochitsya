@@ -13,7 +13,7 @@
         --cover-image: url(./images/cover-image-dark.png);
     }
 
-	.page .header__record-light-container {
+	.decorated-zone:not(.theme_light) .header__record-light-container {
 		visibility: visible;
 	}
 }
