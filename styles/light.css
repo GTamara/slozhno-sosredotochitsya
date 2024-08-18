@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: light) or (prefers-color-scheme: no-preference) {
+@media (prefers-color-scheme: light) {
 	
     :root {
         --base-background-color: #fff1f7;
